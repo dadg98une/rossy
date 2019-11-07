@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_main"
+            android:icon="@drawable/ic_main"
+            android:title="Menu Principal"/>
+        <item android:id="@+id/nav_monitor"
+            android:icon="@drawable/ic_monitor"
+            android:title="Monitor Cocina"/>
+        <item android:id="@+id/nav_tables"
+            android:icon="@drawable/ic_tables"
+            android:title="Mesas"/>
+        <item android:id="@+id/nav_user"
+            android:icon="@drawable/ic_user"
+            android:title="Usuario"/>
+    </group>
+
+    <item android:title="Opciones">
+        <menu>
+            <item android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_signout"
+                android:title="Cerrar Sesion"/>
+        </menu>
+    </item>
+
+</menu>

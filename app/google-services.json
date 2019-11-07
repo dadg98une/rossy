@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "469160866124",
+    "firebase_url": "https://rossy-4c7b0.firebaseio.com",
+    "project_id": "rossy-4c7b0",
+    "storage_bucket": "rossy-4c7b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:469160866124:android:caa6c016a79fd6931c9fe9",
+        "android_client_info": {
+          "package_name": "com.example.rossy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "469160866124-ngk2m78v4re6m566ccegafe9kmg82urp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rossy",
+            "certificate_hash": "afcbdd54122df8474d69ff654e6ddd71c052259c"
+          }
+        },
+        {
+          "client_id": "469160866124-01o6eqva1o5ms3178mppjkdkad0ad6fm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKyL2wozoKhjY7_5UiJc6stwNOX9wCFeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "469160866124-01o6eqva1o5ms3178mppjkdkad0ad6fm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

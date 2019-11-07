@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Rossy</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="register">Registrarse</string>
+    <string name="unlock">Desbloquear</string>
+    <string name="cancel">Cancelar</string>
+    <string name="email">Correo Electronico</string>
+    <string name="password">Contraseña</string>
+    <string name="user">Nombre de usuario</string>
+    <string name="navigation_drawer_open">Abrir la navegación</string>
+    <string name="navigation_drawer_close">Cerrar la navegación</string>
+</resources>
