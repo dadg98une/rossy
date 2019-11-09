@@ -9,10 +9,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    private var mFirebaseDatabaseInstance: FirebaseFirestore? = null
+    private var userId: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,50 +23,75 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         setSupportActionBar(toolbar)
 
+        //se inicia la instancia de firestore
+        mFirebaseDatabaseInstance = FirebaseFirestore.getInstance()
+
         //listener para la navigation view
         nav_view.setNavigationItemSelectedListener(this);
 
-        val toogle = ActionBarDrawerToggle(this,drawer_layout,toolbar,
-            R.string.navigation_drawer_open,R.string.navigation_drawer_close)
+        val toogle = ActionBarDrawerToggle(
+            this, drawer_layout, toolbar,
+            R.string.navigation_drawer_open, R.string.navigation_drawer_close
+        )
         drawer_layout.addDrawerListener(toogle)
+
         toogle.syncState()
+
         //se abre el fragmento inmediatamente
-        if (savedInstanceState == null){
-            supportFragmentManager.beginTransaction().replace(R.id.fragment_container,
-                MainFragment()).commit()
-            nav_view.setCheckedItem(R.id.nav_main)
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction().replace(
+                R.id.fragment_container,
+                ServicesFragment()
+            ).commit()
+            nav_view.setCheckedItem(R.id.nav_services)
         }
 
     }
 
+
+
     //activa nuevos fragmentos al main
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
-        when (p0.itemId){
-            R.id.nav_main -> {
-                supportFragmentManager.beginTransaction().replace(R.id.fragment_container,
-                    MainFragment()).commit()
+        when (p0.itemId) {
+            R.id.nav_services -> {
+                supportFragmentManager.beginTransaction().replace(
+                    R.id.fragment_container,
+                    ServicesFragment()
+                ).commit()
+            }
+            R.id.nav_foodmenu -> {
+                supportFragmentManager.beginTransaction().replace(
+                    R.id.fragment_container,
+                    FoodMenuFragment()
+                ).commit()
             }
             R.id.nav_monitor -> {
-                supportFragmentManager.beginTransaction().replace(R.id.fragment_container,
-                    MonitorFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(
+                    R.id.fragment_container,
+                    MonitorFragment()
+                ).commit()
             }
             R.id.nav_tables -> {
-                supportFragmentManager.beginTransaction().replace(R.id.fragment_container,
-                    TablesFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(
+                    R.id.fragment_container,
+                    TablesFragment()
+                ).commit()
             }
             R.id.nav_user -> {
-                supportFragmentManager.beginTransaction().replace(R.id.fragment_container,
-                    UserFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(
+                    R.id.fragment_container,
+                    UserFragment()
+                ).commit()
             }
-            R.id.nav_logout-> {
+            R.id.nav_logout -> {
                 //para cerrar sesion con la instancia de firebase
-                Toast.makeText(this,"Sesion Cerrada Correctamente",Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Sesion Cerrada Correctamente", Toast.LENGTH_LONG).show()
                 FirebaseAuth.getInstance().signOut()
                 startActivity(Intent(this, Login::class.java))
                 finish()
             }
             else -> {
-                Toast.makeText(this,"Algo paso",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Algo paso", Toast.LENGTH_SHORT).show()
             }
         }
         drawer_layout.closeDrawer(GravityCompat.START)
@@ -71,13 +99,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onBackPressed() {
-        if (drawer_layout.isDrawerOpen(GravityCompat.START)){
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
-        } else  {
+        } else {
             super.onBackPressed()
         }
     }
-
 
 
 }

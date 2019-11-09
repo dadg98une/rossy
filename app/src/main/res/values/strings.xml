@@ -7,6 +7,9 @@
     <string name="email">Correo Electronico</string>
     <string name="password">Contraseña</string>
     <string name="user">Nombre de usuario</string>
+    <string name="name">Nombre</string>
+    <string name="lastName">Apellido</string>
+    <string name="update">Actualizar Datos</string>
     <string name="navigation_drawer_open">Abrir la navegación</string>
     <string name="navigation_drawer_close">Cerrar la navegación</string>
     <string name="title_activity_tab">TabActivity</string>
