@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="189dp"
@@ -15,18 +16,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_user" />
 
-    <Button
-        android:id="@+id/updateBtn_UserF"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onUpdateClickedUser"
-        android:text="@string/update"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/name_UserF"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/lastName_UserF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastName_UserF"
-        tools:text="@string/update" />
+        app:layout_constraintTop_toBottomOf="@+id/email_UserF" />
 
     <EditText
         android:id="@+id/lastName_UserF"
@@ -44,38 +48,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_UserF" />
 
-    <ProgressBar
-        android:id="@+id/progressBar_UserF"
-        style="@style/Widget.AppCompat.ProgressBar"
-        android:layout_width="48dp"
+    <Button
+        android:id="@+id/updateBtn_UserF"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/name_UserF"
-        app:layout_constraintTop_toBottomOf="@+id/email_UserF"
-        tools:layout_editor_absoluteX="206dp" />
-
-    <EditText
-        android:id="@+id/name_UserF"
-        android:layout_width="0dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:hint="@string/name"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/lastName_UserF"
+        android:text="@string/update"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar_UserF" />
+        app:layout_constraintTop_toBottomOf="@+id/lastName_UserF"
+        tools:text="@string/update" />
 
     <TextView
         android:id="@+id/email_UserF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="email@emai.com"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar_UserF"
+        app:layout_constraintBottom_toTopOf="@+id/name_UserF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />

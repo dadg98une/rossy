@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".TablesForm"></activity>
+        <activity android:name=".activity_add_tables" />
         <activity
             android:name=".TabActivity"
             android:label="@string/title_activity_tab"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Register" />
         <activity android:name=".PreRegister" />
         <activity

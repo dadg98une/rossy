@@ -10,6 +10,7 @@
     <string name="name">Nombre</string>
     <string name="lastName">Apellido</string>
     <string name="update">Actualizar Datos</string>
+    <string name="addTable">Agregar una mesa</string>
     <string name="navigation_drawer_open">Abrir la navegación</string>
     <string name="navigation_drawer_close">Cerrar la navegación</string>
     <string name="title_activity_tab">TabActivity</string>
