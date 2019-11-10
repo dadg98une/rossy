@@ -14,9 +14,7 @@ import kotlinx.android.synthetic.main.activity_register.*
 class Register : AppCompatActivity() {
 
     private var mAuth: FirebaseAuth? = null
-
     private var mFirebaseDatabaseInstance: FirebaseFirestore? = null
-
     private var userId: String? = null
     private var emailAddress: String? = null
 
