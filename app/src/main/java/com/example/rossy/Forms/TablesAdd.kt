@@ -13,7 +13,7 @@ import com.example.rossy.R
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_tables_form.*
 
-class TablesForm : AppCompatActivity(), AdapterView.OnItemSelectedListener {
+class TablesAdd : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     override fun onNothingSelected(parent: AdapterView<*>?) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -88,6 +88,6 @@ class TablesForm : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     companion object {
-        private val TAG = TablesForm::class.java.getSimpleName()
+        private val TAG = TablesAdd::class.java.getSimpleName()
     }
 }

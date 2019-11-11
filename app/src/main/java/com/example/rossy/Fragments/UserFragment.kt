@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.rossy.R
 import com.example.rossy.Objetos.User
+import com.example.rossy.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
@@ -52,7 +52,7 @@ class UserFragment : Fragment() {
         super.onDestroyView()
         docRef = null
         val registration = mFirebaseDatabaseInstance?.collection("users")?.addSnapshotListener{
-            snapshot, exception ->
+                snapshot, exception ->
 
         }
         registration?.remove()

@@ -27,6 +27,7 @@ class TablesAdapter(val tables : MutableList<Tables>): RecyclerView.Adapter<Tabl
         holder.view.tableArea.text = table.area
     }
 
+
     class TablesViewHolder(val view: View): RecyclerView.ViewHolder(view)
 
 }

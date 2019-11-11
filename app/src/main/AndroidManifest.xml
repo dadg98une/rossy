@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Forms.TablesForm"></activity>
+        <activity android:name=".Forms.TablesEdit"></activity>
+        <activity android:name=".Forms.TablesAdd" />
         <activity android:name=".activity_add_tables" />
         <activity
             android:name=".TabActivity"
