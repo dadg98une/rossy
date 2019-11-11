@@ -19,6 +19,7 @@ class TablesForm : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        Toast.makeText(this,"item seleccionado",Toast.LENGTH_SHORT).show()
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
@@ -60,6 +61,7 @@ class TablesForm : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         nombre = tableName.text.toString()
         capacidad = tableCapacity.text.toString().toIntOrNull()
+        area = tableArea.selectedItem.toString()
 
 
         val table = hashMapOf(

@@ -1,7 +1,9 @@
 package com.example.rossy.Fragments
 
+import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +19,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class TablesFragment : Fragment() {
 
-    private var mFirebaseDatabaseInstance: FirebaseFirestore? = null
+    private var db: FirebaseFirestore? = null
+    private val mesas = mutableListOf<Tables>()
     private var nombre: String? = null
     private var capacidad: String? = null
     private var area: String? = null
@@ -29,29 +32,44 @@ class TablesFragment : Fragment() {
     ): View? {
         val v = inflater.inflate(R.layout.fragment_tables, container, false)
 
-        mFirebaseDatabaseInstance = FirebaseFirestore.getInstance()
+        db = FirebaseFirestore.getInstance()
 
 
         val btnAddTable = v.findViewById<Button>(R.id.addBtn_TablesF)
         val rTables = v.findViewById<RecyclerView>(R.id.recyclerTables)
 
+
         btnAddTable.setOnClickListener {
             addTableForm()
         }
 
-        val tables = listOf(
-            Tables("Mesa 1","Adentro",4),
-            Tables("Mesa 2","Adentro",4),
-            Tables("Mesa 3","Adentro",4),
-            Tables("Mesa 4","Adentro",4),
-            Tables("Mesa 1","Afuera",4),
-            Tables("Mesa 2","Afuera",4),
-            Tables("Mesa 3","Afuera",4),
-            Tables("Mesa 4","Afurea",4)
-        )
+        val mesasRef = db?.collection("mesas")
+
+        mesasRef?.addSnapshotListener { value, e ->
+            if (e != null) {
+                Log.w(ContentValues.TAG, "Listen failed.", e)
+                return@addSnapshotListener
+            }
+
+            mesas.clear()
+
+            for (doc in value!!) {
+                val area = doc.getString("Area").toString()
+                val capacidad = doc.get("Capacidad").toString()
+                var capaciti = capacidad.toIntOrNull()
+                if (capaciti == null){
+                    capaciti = 0
+                }
+                val nombre = doc.get("Nombre").toString()
+                //var id = doc.id
+                mesas.add(Tables(nombre,area,capaciti))
+            }
+            Log.d(ContentValues.TAG, "mesas actualizando")
+        }
 
         rTables.layoutManager = LinearLayoutManager(v.context)
-        rTables.adapter = TablesAdapter(tables)
+
+        rTables.adapter = TablesAdapter(mesas)
 
         return v
     }

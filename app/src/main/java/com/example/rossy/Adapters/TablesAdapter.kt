@@ -8,14 +8,8 @@ import com.example.rossy.Objetos.Tables
 import com.example.rossy.R
 import kotlinx.android.synthetic.main.card_table.view.*
 
-class TablesAdapter(val tables : List<Tables>): RecyclerView.Adapter<TablesAdapter.TablesViewHolder>() {
+class TablesAdapter(val tables : MutableList<Tables>): RecyclerView.Adapter<TablesAdapter.TablesViewHolder>() {
 
-
-
-}
-
-
-/*
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TablesViewHolder {
         return TablesViewHolder(
             LayoutInflater.from(parent.context)
@@ -34,4 +28,5 @@ class TablesAdapter(val tables : List<Tables>): RecyclerView.Adapter<TablesAdapt
     }
 
     class TablesViewHolder(val view: View): RecyclerView.ViewHolder(view)
- */
+
+}
