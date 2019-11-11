@@ -35,10 +35,10 @@ class TablesForm : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         db = FirebaseFirestore.getInstance()
 
         val spiner = findViewById<Spinner>(R.id.tableArea)
-        val adapter = ArrayAdapter.createFromResource(this,R.array.seccionesArea,android.R.layout.simple_spinner_item)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spiner.adapter = adapter
-        spiner.onItemSelectedListener
+        val adapter2 = ArrayAdapter.createFromResource(this,R.array.seccionesArea,android.R.layout.simple_spinner_item)
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        spiner.adapter = adapter2
 
     }
 
