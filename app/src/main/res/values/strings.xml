@@ -12,9 +12,17 @@
     <string name="update">Actualizar Datos</string>
     <string name="addTable">Agregar una mesa</string>
     <string name="capacity">Capacidad de la mesa</string>
+    <string name="area">Area</string>
     <string name="navigation_drawer_open">Abrir la navegación</string>
     <string name="navigation_drawer_close">Cerrar la navegación</string>
     <string name="title_activity_tab">TabActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+
+
+    <string-array name="seccionesArea">
+        <item>Principal</item>
+        <item>Adentro</item>
+        <item>Afuera</item>
+    </string-array>
 </resources>

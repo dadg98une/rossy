@@ -1,10 +1,12 @@
-package com.example.rossy
+package com.example.rossy.Fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.rossy.R
+
 //import com.google.android.material.bottomnavigation.BottomNavigationView
 //, BottomNavigationView.OnNavigationItemSelectedListener
 class MainFragment : Fragment(){
