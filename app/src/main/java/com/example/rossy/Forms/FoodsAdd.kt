@@ -17,7 +17,7 @@ class FoodsAdd : AppCompatActivity() {
     private var db: FirebaseFirestore? = null
     private var nombre: String? = null
     private var categoria: String? = null
-    private var precio: Int? = null
+    private var precio: Double? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +50,7 @@ class FoodsAdd : AppCompatActivity() {
 
 
         nombre = nameAddFood.text.toString()
-        precio = priceAddFood.text.toString().toIntOrNull()
+        precio = priceAddFood.text.toString().toDoubleOrNull()
         categoria = addFoodSpinner.selectedItem.toString()
 
 
@@ -63,10 +63,10 @@ class FoodsAdd : AppCompatActivity() {
         db?.collection("menu")?.document("alimentos")?.collection("comida")?.add(table)?.addOnSuccessListener {
                 documentReference ->
             Log.d(TAG,"Mesa añadida con la ID: ${documentReference.id}")
-            Toast.makeText(this,"Mesa añadidad correctamente", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"Comida añadidad correctamente", Toast.LENGTH_SHORT).show()
             finish()
         }?.addOnFailureListener { e ->
-            Log.w(TAG,"Error al añadir mesa",e)
+            Log.w(TAG,"Error al añadir Comida",e)
         }
 
 

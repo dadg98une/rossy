@@ -4,29 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Forms.DrinkEdit">
+    tools:context=".Forms.DrinkAdd">
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/imageView9"
         android:layout_width="100sp"
         android:layout_height="100sp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_foodmenu" />
+        app:srcCompat="@drawable/ic_add_circle" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Editar bebida"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+        android:text="Agregar bebida"
+        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintStart_toStartOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
     <EditText
-        android:id="@+id/nameEditDrink"
+        android:id="@+id/nameAddDrink"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -39,10 +39,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <EditText
-        android:id="@+id/priceEditDrink"
+        android:id="@+id/priceAddDrink"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -55,10 +55,10 @@
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameEditDrink" />
+        app:layout_constraintTop_toBottomOf="@+id/nameAddDrink" />
 
     <EditText
-        android:id="@+id/sizeEditDrink"
+        android:id="@+id/sizeAddDrink"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -66,13 +66,13 @@
         android:ems="10"
         android:hint="Tamaño de la bebida en"
         android:inputType="numberDecimal"
-        app:layout_constraintEnd_toStartOf="@+id/textView21"
+        app:layout_constraintEnd_toStartOf="@+id/textView20"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/priceEditDrink" />
+        app:layout_constraintTop_toBottomOf="@+id/priceAddDrink" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -80,13 +80,13 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="ml"
-        app:layout_constraintBaseline_toBaselineOf="@+id/sizeEditDrink"
+        app:layout_constraintBaseline_toBaselineOf="@+id/sizeAddDrink"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/sizeEditDrink" />
+        app:layout_constraintStart_toEndOf="@+id/sizeAddDrink" />
 
     <Button
-        android:id="@+id/editarDrink"
+        android:id="@+id/agregarDrink"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -94,25 +94,24 @@
         android:layout_marginLeft="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:onClick="editDrink"
-        android:text="Editar"
-        app:layout_constraintBottom_toTopOf="@+id/cancelEditDrink"
+        android:onClick="addDrink"
+        android:text="Agregar Bebida"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sizeEditDrink" />
+        app:layout_constraintTop_toBottomOf="@+id/sizeAddDrink" />
 
     <Button
-        android:id="@+id/cancelEditDrink"
+        android:id="@+id/button4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:onClick="cancel"
         android:text="@string/cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editarDrink" />
+        app:layout_constraintTop_toBottomOf="@+id/agregarDrink" />
 </androidx.constraintlayout.widget.ConstraintLayout>
