@@ -19,6 +19,7 @@
         app:srcCompat="@drawable/ic_services" />
 
     <androidx.recyclerview.widget.RecyclerView
+        tools:listitem="@layout/card_service"
         android:id="@+id/recyclerServices"
         android:layout_width="0dp"
         android:layout_height="0dp"
