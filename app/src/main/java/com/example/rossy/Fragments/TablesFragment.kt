@@ -61,9 +61,6 @@ class TablesFragment : Fragment() {
         startActivity(Intent(this@TablesFragment.context, TablesAdd::class.java))
     }
 
-    private fun editTableForm(){
-
-    }
 
     private fun update() {
         mesas?.clear()

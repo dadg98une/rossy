@@ -26,9 +26,9 @@ class TablesAdapter(val tables : MutableList<Tables>): RecyclerView.Adapter<Tabl
     override fun onBindViewHolder(holder: TablesViewHolder, position: Int) {
         val table = tables[position]
 
-        holder.view.tableName.text = table.name
-        holder.view.tableCapacity.text = table.capacidad.toString()
-        holder.view.tableArea.text = table.area
+        holder.view.nameTableText.text = table.name
+        holder.view.tableCapacityText.text = table.capacidad.toString()
+        holder.view.areaTablesText.text = table.area
         holder.view.idTable.text = table.id
 
     }
@@ -37,9 +37,9 @@ class TablesAdapter(val tables : MutableList<Tables>): RecyclerView.Adapter<Tabl
         init {
             view.editTable.setOnClickListener {
                 val intent = Intent(view.context, TablesEdit::class.java)
-                intent.putExtra("name",view.tableName.text)
-                intent.putExtra("area",view.tableArea.text)
-                intent.putExtra("capacidad",view.tableCapacity.text)
+                intent.putExtra("name",view.nameTableText.text)
+                intent.putExtra("area",view.areaTablesText.text)
+                intent.putExtra("capacidad",view.tableCapacityText.text)
                 intent.putExtra("id",view.idTable.text)
                 println("TEST ${view.idTable.text}")
                 view.context.startActivity(intent)

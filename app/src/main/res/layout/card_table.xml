@@ -12,7 +12,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="100sp"
-        app:cardBackgroundColor="#FFD180"
+        app:cardBackgroundColor="#FFE082"
         app:cardCornerRadius="20dp"
         app:cardElevation="5sp"
         app:contentPadding="2dp" >
@@ -41,7 +41,7 @@
                 tools:text="EDITAR" />
 
             <TextView
-                android:id="@+id/tableName"
+                android:id="@+id/nameTableText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -70,8 +70,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:text="personas"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tableCapacity"
-                app:layout_constraintStart_toEndOf="@+id/tableCapacity" />
+                app:layout_constraintBaseline_toBaselineOf="@+id/tableCapacityText"
+                app:layout_constraintStart_toEndOf="@+id/tableCapacityText" />
 
             <TextView
                 android:id="@+id/textView7"
@@ -85,7 +85,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
             <TextView
-                android:id="@+id/tableCapacity"
+                android:id="@+id/tableCapacityText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -107,7 +107,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
             <TextView
-                android:id="@+id/tableArea"
+                android:id="@+id/areaTablesText"
                 android:textColor="@android:color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -125,8 +125,8 @@
                 android:layout_marginLeft="8dp"
                 android:text="Esta es la id"
                 android:visibility="gone"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tableName"
-                app:layout_constraintStart_toEndOf="@+id/tableName" />
+                app:layout_constraintBaseline_toBaselineOf="@+id/nameTableText"
+                app:layout_constraintStart_toEndOf="@+id/nameTableText" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

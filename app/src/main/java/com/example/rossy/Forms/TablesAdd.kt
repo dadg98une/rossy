@@ -34,7 +34,7 @@ class TablesAdd : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         db = FirebaseFirestore.getInstance()
 
-        val spiner = findViewById<Spinner>(R.id.tableArea)
+        val spiner = findViewById<Spinner>(R.id.areaTablesText)
         val adapter2 = ArrayAdapter.createFromResource(this,R.array.seccionesArea,android.R.layout.simple_spinner_item)
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
@@ -43,25 +43,25 @@ class TablesAdd : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     fun addTable(view: View) {
-        if (TextUtils.isEmpty(tableName.text.toString())) {
+        if (TextUtils.isEmpty(nameTableText.text.toString())) {
             Toast.makeText(applicationContext, "Ingresa un nombre a la mesa", Toast.LENGTH_SHORT).show()
             return
         }
 
-        if (TextUtils.isEmpty(tableCapacity.text.toString())) {
+        if (TextUtils.isEmpty(tableCapacityText.text.toString())) {
             Toast.makeText(applicationContext, "Ingresa la capacidad de la mesa", Toast.LENGTH_SHORT).show()
             return
         }
 
-        if (TextUtils.isEmpty(tableArea.toString())) {
+        if (TextUtils.isEmpty(areaTablesText.toString())) {
             Toast.makeText(applicationContext, "Ingresa donde esta ubicada la mesa", Toast.LENGTH_SHORT).show()
             return
         }
 
 
-        nombre = tableName.text.toString()
-        capacidad = tableCapacity.text.toString().toIntOrNull()
-        area = tableArea.selectedItem.toString()
+        nombre = nameTableText.text.toString()
+        capacidad = tableCapacityText.text.toString().toIntOrNull()
+        area = areaTablesText.selectedItem.toString()
 
 
         val table = hashMapOf(
