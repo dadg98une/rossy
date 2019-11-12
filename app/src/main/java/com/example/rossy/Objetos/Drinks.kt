@@ -1,8 +1,8 @@
 package com.example.rossy.Objetos
 
-data class Foods(
+data class Drinks(
     val id: String,
     val nombre: String,
     val precio: Double,
-    val categoria: String
+    val tamaño: Double
 )

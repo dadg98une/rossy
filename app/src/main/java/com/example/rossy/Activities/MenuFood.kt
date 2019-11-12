@@ -68,8 +68,9 @@ class MenuFood : AppCompatActivity() {
                                 precio = 0.0
                             }
                             val name = docs?.get("Nombre").toString()
+                            val cat = docs?.get("Categoria").toString()
                             var id = docs.id
-                            foods?.add(Foods(id,name,precio))
+                            foods?.add(Foods(id,name,precio,cat))
                             recyclerFood.setOnClickListener {
                                 editFood.setText(id)
                             }
@@ -88,8 +89,9 @@ class MenuFood : AppCompatActivity() {
                                 precio = 0.0
                             }
                             val name = docs?.get("Nombre").toString()
+                            val cat = docs?.get("Categoria").toString()
                             var id = docs.id
-                            foods?.add(Foods(id,name,precio))
+                            foods?.add(Foods(id,name,precio,cat))
                             recyclerFood.setOnClickListener {
                                 editFood.setText(id)
                             }
@@ -108,8 +110,9 @@ class MenuFood : AppCompatActivity() {
                                 precio = 0.0
                             }
                             val name = docs?.get("Nombre").toString()
+                            val cat = docs?.get("Categoria").toString()
                             var id = docs.id
-                            foods?.add(Foods(id,name,precio))
+                            foods?.add(Foods(id,name,precio,cat))
                             recyclerFood.setOnClickListener {
                                 editFood.setText(id)
                             }

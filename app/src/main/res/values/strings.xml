@@ -25,4 +25,11 @@
         <item>Adentro</item>
         <item>Afuera</item>
     </string-array>
+
+    <string-array name="seccionesComida">
+        <item>Entradas</item>
+        <item>Especialidades</item>
+        <item>Postres</item>
+    </string-array>
+
 </resources>

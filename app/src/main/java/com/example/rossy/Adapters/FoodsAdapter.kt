@@ -24,7 +24,9 @@ class FoodsAdapter(val foods: MutableList<Foods>): RecyclerView.Adapter<FoodsAda
 
         holder.view.nameFoodText.text = food.nombre
         holder.view.priceFoodText.text = food.precio.toString()
+        holder.view.categoryFoodText.text = food.categoria
         holder.view.idFoodText.text = food.id
+
     }
 
 
@@ -34,6 +36,7 @@ class FoodsAdapter(val foods: MutableList<Foods>): RecyclerView.Adapter<FoodsAda
                 val intent = Intent(view.context, FoodsEdit::class.java)
                 intent.putExtra("nombre", view.nameFoodText.text)
                 intent.putExtra("price",view.priceFoodText.text)
+                intent.putExtra("categoria",view.categoryFoodText.text)
                 intent.putExtra("id",view.idFoodText.text)
                 view.context.startActivity(intent)
             }

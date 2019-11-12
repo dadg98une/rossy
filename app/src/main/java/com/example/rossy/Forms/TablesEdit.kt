@@ -57,8 +57,6 @@ class TablesEdit : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             spiner.setSelection(spinnerPosition)
         }
 
-
-
         tableNameEdit!!.setText(nameI)
         tableCapacityEdit!!.setText(capacidadI)
 

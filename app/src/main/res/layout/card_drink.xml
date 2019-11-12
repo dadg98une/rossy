@@ -10,10 +10,10 @@
     >
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/foodCard"
+        android:id="@+id/drinkCard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardBackgroundColor="#81D4FA"
+        app:cardBackgroundColor="#B39DDB"
         app:cardCornerRadius="20dp"
         app:cardElevation="5sp"
         app:contentPadding="2dp">
@@ -27,7 +27,7 @@
             tools:layout_editor_absoluteY="2dp">
 
             <TextView
-                android:id="@+id/nameFoodText"
+                android:id="@+id/nameDrinkText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -35,7 +35,7 @@
                 android:text="TextView"
                 android:textColor="@android:color/black"
                 app:layout_constraintBaseline_toBaselineOf="@+id/textView13"
-                app:layout_constraintEnd_toStartOf="@+id/editFood"
+                app:layout_constraintEnd_toStartOf="@+id/editDrink"
                 app:layout_constraintStart_toEndOf="@+id/textView13" />
 
             <TextView
@@ -47,12 +47,12 @@
                 android:layout_marginTop="8dp"
                 android:text="Precio: $"
                 android:textColor="@android:color/black"
-                app:layout_constraintBottom_toTopOf="@+id/categoryFoodText"
+                app:layout_constraintBottom_toTopOf="@+id/sizeDrinkText"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
             <TextView
-                android:id="@+id/priceFoodText"
+                android:id="@+id/priceDrinkText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -60,7 +60,7 @@
                 android:text="TextView"
                 android:textColor="@android:color/black"
                 app:layout_constraintBaseline_toBaselineOf="@+id/textView12"
-                app:layout_constraintEnd_toStartOf="@+id/editFood"
+                app:layout_constraintEnd_toStartOf="@+id/editDrink"
                 app:layout_constraintStart_toEndOf="@+id/textView12" />
 
             <TextView
@@ -76,7 +76,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/editFood"
+                android:id="@+id/editDrink"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="97dp"
                 android:layout_height="77dp"
@@ -88,23 +88,31 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/idFoodText"
+                android:id="@+id/idDrinkText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
                 android:visibility="gone"
-                app:layout_constraintBaseline_toBaselineOf="@+id/priceFoodText"
-                app:layout_constraintStart_toEndOf="@+id/priceFoodText" />
+                app:layout_constraintBaseline_toBaselineOf="@+id/priceDrinkText"
+                app:layout_constraintStart_toEndOf="@+id/priceDrinkText" />
 
             <TextView
-                android:id="@+id/categoryFoodText"
+                android:id="@+id/sizeDrinkText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/priceFoodText"
+                app:layout_constraintEnd_toEndOf="@+id/priceDrinkText"
                 app:layout_constraintStart_toStartOf="@+id/textView12"
                 app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ml"
+                app:layout_constraintBaseline_toBaselineOf="@+id/sizeDrinkText"
+                app:layout_constraintStart_toEndOf="@+id/sizeDrinkText" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
