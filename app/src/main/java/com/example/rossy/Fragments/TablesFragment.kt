@@ -20,6 +20,7 @@ import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
+import kotlinx.android.synthetic.main.card_table.*
 import kotlinx.android.synthetic.main.fragment_tables.*
 
 class TablesFragment : Fragment() {
@@ -60,6 +61,10 @@ class TablesFragment : Fragment() {
         startActivity(Intent(this@TablesFragment.context, TablesAdd::class.java))
     }
 
+    private fun editTableForm(){
+
+    }
+
     private fun update() {
         mesas?.clear()
 
@@ -86,7 +91,10 @@ class TablesFragment : Fragment() {
                             }
                             val nombre = docs?.get("Nombre").toString()
                             var id = docs.id
-                            mesas?.add(Tables(nombre, area, capaciti))
+                            mesas?.add(Tables(id, nombre, area, capaciti))
+                            recyclerTables.setOnClickListener {
+                                editTable.setText(id)
+                            }
                             recyclerTables.adapter?.notifyDataSetChanged()
                             //Log.d(TAG, "mesas actualizando")
                         }
@@ -104,7 +112,7 @@ class TablesFragment : Fragment() {
                             }
                             val nombre = docs?.get("Nombre").toString()
                             var id = docs.id
-                            mesas?.add(Tables(nombre, area, capaciti))
+                            mesas?.add(Tables(id,nombre, area, capaciti))
                             recyclerTables.adapter?.notifyDataSetChanged()
                             //Log.d(TAG, "mesas actualizando")
                         }
@@ -122,7 +130,7 @@ class TablesFragment : Fragment() {
                             }
                             val nombre = docs?.get("Nombre").toString()
                             var id = docs.id
-                            mesas?.add(Tables(nombre, area, capaciti))
+                            mesas?.add(Tables(id, nombre, area, capaciti))
                             recyclerTables.adapter?.notifyDataSetChanged()
                             //Log.d(TAG, "mesas actualizando")
                         }

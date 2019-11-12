@@ -1,14 +1,18 @@
 package com.example.rossy.Adapters
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.rossy.Forms.TablesEdit
 import com.example.rossy.Objetos.Tables
 import com.example.rossy.R
 import kotlinx.android.synthetic.main.card_table.view.*
 
 class TablesAdapter(val tables : MutableList<Tables>): RecyclerView.Adapter<TablesAdapter.TablesViewHolder>() {
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TablesViewHolder {
         return TablesViewHolder(
@@ -25,9 +29,23 @@ class TablesAdapter(val tables : MutableList<Tables>): RecyclerView.Adapter<Tabl
         holder.view.tableName.text = table.name
         holder.view.tableCapacity.text = table.capacidad.toString()
         holder.view.tableArea.text = table.area
+        holder.view.idTable.text = table.id
+
     }
 
+    class TablesViewHolder(val view: View): RecyclerView.ViewHolder(view){
+        init {
+            view.editTable.setOnClickListener {
+                val intent = Intent(view.context, TablesEdit::class.java)
+                intent.putExtra("name",view.tableName.text)
+                intent.putExtra("area",view.tableArea.text)
+                intent.putExtra("capacidad",view.tableCapacity.text)
+                intent.putExtra("id",view.idTable.text)
+                println("TEST ${view.idTable.text}")
+                view.context.startActivity(intent)
+            }
+        }
+    }
 
-    class TablesViewHolder(val view: View): RecyclerView.ViewHolder(view)
 
 }

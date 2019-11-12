@@ -9,13 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Forms.TablesEdit"></activity>
+        <activity android:name=".Forms.TablesEdit"
+            android:label="Editar Mesa"
+            android:launchMode="singleTop"/>
         <activity android:name=".Forms.TablesAdd" />
-        <activity android:name=".activity_add_tables" />
-        <activity
-            android:name=".TabActivity"
-            android:label="@string/title_activity_tab"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Forms.Register" />
         <activity android:name=".Activities.PreRegister" />
         <activity
@@ -24,7 +21,6 @@
         <activity android:name=".Activities.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
