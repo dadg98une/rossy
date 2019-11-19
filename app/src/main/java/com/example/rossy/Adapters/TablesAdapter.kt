@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.card_table.view.*
 
 class TablesAdapter(val tables : MutableList<Tables>): RecyclerView.Adapter<TablesAdapter.TablesViewHolder>() {
 
+    private var id: String ?= null
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TablesViewHolder {
@@ -30,7 +31,7 @@ class TablesAdapter(val tables : MutableList<Tables>): RecyclerView.Adapter<Tabl
         holder.view.tableCapacityText.text = table.capacidad.toString()
         holder.view.areaTablesText.text = table.area
         holder.view.idTable.text = table.id
-
+        id = table.id
     }
 
     class TablesViewHolder(val view: View): RecyclerView.ViewHolder(view){

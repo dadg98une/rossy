@@ -1,68 +1,71 @@
-package com.example.rossy.Fragments
+package com.example.rossy.Forms
 
 import android.content.ContentValues
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
-import androidx.fragment.app.Fragment
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.rossy.Adapters.TablesAdapter
-import com.example.rossy.Forms.TablesAdd
+import com.example.rossy.Adapters.PreAddAdapter
 import com.example.rossy.Objetos.Tables
 import com.example.rossy.R
-import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
-import kotlinx.android.synthetic.main.card_table.*
-import kotlinx.android.synthetic.main.fragment_tables.*
+import com.google.firebase.firestore.Query
+import kotlinx.android.synthetic.main.activity_service_pre_add.*
 
-class TablesFragment : Fragment() {
+class ServicePreAdd : AppCompatActivity(), AdapterView.OnItemSelectedListener {
+
+    override fun onNothingSelected(parent: AdapterView<*>?) {
+        areaQuery = spinner.selectedItem.toString()
+    }
+
+    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        update()
+    }
 
     private var db: FirebaseFirestore? = null
-    private var docRef: CollectionReference? = null
+    private var docRef: Query? = null
     private var estoo: ListenerRegistration? = null
     private val mesas = mutableListOf<Tables>()
+    private  var areaQuery: String? = null
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val v = inflater.inflate(R.layout.fragment_tables, container, false)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_service_pre_add)
+
         db = FirebaseFirestore.getInstance()
 
-        docRef= db?.collection("mesas")
+        val spinner = findViewById<Spinner>(R.id.spinner)
+        val adapter = ArrayAdapter.createFromResource(this,R.array.seccionesArea,android.R.layout.simple_spinner_item)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        adapter.setNotifyOnChange(true)
 
-        val btnAddTable = v.findViewById<Button>(R.id.addBtn_TablesF)
-        var rTables = v.findViewById<RecyclerView>(R.id.recyclerTables)
+        spinner.adapter = adapter
 
-        btnAddTable.setOnClickListener {
-            addTableForm()
-        }
-
-        mesas?.removeAll(mesas)
+        areaQuery = spinner.selectedItem.toString()
 
         update()
 
-        rTables?.layoutManager = LinearLayoutManager(v.context)
-        rTables?.adapter = TablesAdapter(mesas)
+        mesas?.removeAll(mesas)
 
-        return v
+        recyclerTablePreAdd?.layoutManager = LinearLayoutManager(this)
+        recyclerTablePreAdd?.adapter = PreAddAdapter(mesas)
     }
 
-    private fun addTableForm() {
-        startActivity(Intent(this@TablesFragment.context, TablesAdd::class.java))
+    fun buscar(view: View?) {
+        areaQuery = spinner.selectedItem.toString()
+        update()
     }
-
 
     private fun update() {
         mesas?.clear()
+
+        docRef= db?.collection("mesas")?.whereEqualTo("Area", areaQuery)?.whereEqualTo("Ocupada",false)
 
         estoo = docRef?.addSnapshotListener { value, e ->
             if (e != null) {
@@ -71,7 +74,7 @@ class TablesFragment : Fragment() {
             }
 
             mesas?.clear()
-            recyclerTables.adapter?.notifyDataSetChanged()
+            recyclerTablePreAdd.adapter?.notifyDataSetChanged()
 
             for (doc in value!!.documentChanges) {
 
@@ -88,14 +91,9 @@ class TablesFragment : Fragment() {
                             val nombre = docs?.get("Nombre").toString()
                             var id = docs.id
                             mesas?.add(Tables(id, nombre, area, capaciti))
-                            recyclerTables.setOnClickListener {
-                                editTable.setText(id)
-                            }
-                            recyclerTables.adapter?.notifyDataSetChanged()
+                            recyclerTablePreAdd.adapter?.notifyDataSetChanged()
                             //Log.d(TAG, "mesas actualizando")
                         }
-                        //Toast.makeText(this.context, "Mesa Añadida", Toast.LENGTH_SHORT).show()
-                        //Log.d(TAG, "Nueva mesa agregada")
                     }
                     DocumentChange.Type.MODIFIED -> {
                         mesas?.removeAll(mesas)
@@ -108,12 +106,10 @@ class TablesFragment : Fragment() {
                             }
                             val nombre = docs?.get("Nombre").toString()
                             var id = docs.id
-                            mesas?.add(Tables(id,nombre, area, capaciti))
-                            recyclerTables.adapter?.notifyDataSetChanged()
+                            mesas?.add(Tables(id, nombre, area, capaciti))
+                            recyclerTablePreAdd.adapter?.notifyDataSetChanged()
                             //Log.d(TAG, "mesas actualizando")
                         }
-                        //Toast.makeText(this.context, "Mesa Modificada", Toast.LENGTH_SHORT).show()
-                        //Log.d(TAG, "Mesa modificada")
                     }
                     DocumentChange.Type.REMOVED -> {
                         mesas?.removeAll(mesas)
@@ -127,7 +123,7 @@ class TablesFragment : Fragment() {
                             val nombre = docs?.get("Nombre").toString()
                             var id = docs.id
                             mesas?.add(Tables(id, nombre, area, capaciti))
-                            recyclerTables.adapter?.notifyDataSetChanged()
+                            recyclerTablePreAdd.adapter?.notifyDataSetChanged()
                             //Log.d(TAG, "mesas actualizando")
                         }
 
@@ -136,28 +132,14 @@ class TablesFragment : Fragment() {
                         for ((index) in documentos.withIndex() ){
                             Log.d(TAG,"the element at $index")
                         }
-                        //Toast.makeText(this.context, "Mesa Eliminada", Toast.LENGTH_SHORT).show()
-                        //Log.d(TAG, "Mesa eliminada")
                     }
                 }
             }
         }
     }
 
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        estoo?.remove()
-    }
-
-
-
-
     companion object {
-        private val TAG = TablesFragment::class.java.getSimpleName()
+        private val TAG = ServicePreAdd::class.java.getSimpleName()
     }
-
 
 }
-
-

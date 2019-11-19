@@ -4,5 +4,5 @@ data class Drinks(
     val id: String,
     val nombre: String,
     val precio: Double,
-    val tamaño: Double
+    val tamaño: Int
 )

@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -77,7 +76,7 @@ class MenuFood : AppCompatActivity() {
                             recyclerFood.adapter?.notifyDataSetChanged()
                             //Log.d(TAG, "comida añadida")
                         }                                                                           //HASTA ACA SE PUEDE COPIAR Y PEGAR EN ADDED, MODIFIED EN REMOVED CHECAR AFUERA DEL CICLO FOR
-                        Toast.makeText(this, "Comida Añadida", Toast.LENGTH_SHORT).show()       //añadir this.context si es un fragmento
+                        //Toast.makeText(this, "Comida Añadida", Toast.LENGTH_SHORT).show()       //añadir this.context si es un fragmento
                         //Log.d(TAG, "Comida Agregada")
                     }
                     DocumentChange.Type.MODIFIED -> {
@@ -98,7 +97,7 @@ class MenuFood : AppCompatActivity() {
                             recyclerFood.adapter?.notifyDataSetChanged()
                             //Log.d(TAG, "comida actualizando")
                         }                                                                           //HASTA ACA SE PUEDE COPIAR Y PEGAR EN ADDED, MODIFIED EN REMOVED CHECAR AFUERA DEL CICLO FOR
-                        Toast.makeText(this, "Comida Modificada", Toast.LENGTH_SHORT).show()
+                        //Toast.makeText(this, "Comida Modificada", Toast.LENGTH_SHORT).show()
                         //Log.d(TAG, "Mesa modificada")
                     }
                     DocumentChange.Type.REMOVED -> {
@@ -125,14 +124,13 @@ class MenuFood : AppCompatActivity() {
                         for ((index) in documentos.withIndex() ){
                             Log.d(TAG,"the element at $index")
                         }
-                        Toast.makeText(this, "Comida eliminada", Toast.LENGTH_SHORT).show()
+                        //Toast.makeText(this, "Comida eliminada", Toast.LENGTH_SHORT).show()
                         //Log.d(TAG, "comida eliminada")
                     }
                 }
             }
-
-
         }
+
     }
 
     fun addFoodForm (view: View) {

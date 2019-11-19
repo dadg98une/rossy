@@ -31,7 +31,6 @@
                 android:id="@+id/mesaName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:text="Mesa 1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -42,6 +41,7 @@
                 android:id="@+id/mesaArea"
                 android:layout_width="59dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
                 android:text="Principal"
                 app:layout_constraintEnd_toEndOf="@+id/mesaName"
                 app:layout_constraintStart_toStartOf="@+id/mesaName"
@@ -81,10 +81,9 @@
 
             <Button
                 android:id="@+id/entregarOrden"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_width="195dp"
+                android:layout_height="76dp"
+                android:layout_marginBottom="2dp"
                 android:background="#FF8A80"
                 android:text="Entregar Orden"
                 app:layout_constraintBottom_toTopOf="@+id/textView26"
@@ -95,10 +94,8 @@
 
             <Button
                 android:id="@+id/verOrden"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
+                android:layout_width="195dp"
+                android:layout_height="76dp"
                 android:background="#CCFF90"
                 android:text="Ver Orden"
                 app:layout_constraintBottom_toBottomOf="@+id/entregarOrden"
@@ -106,6 +103,15 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/entregarOrden"
                 app:layout_constraintTop_toTopOf="@+id/entregarOrden" />
+
+            <TextView
+                android:id="@+id/serviceID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="serviceID"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

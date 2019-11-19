@@ -14,7 +14,7 @@ class DrinkAdd : AppCompatActivity() {
 
     private var db: FirebaseFirestore? = null
     private var nombre: String? = null
-    private var tamaño: Double? = null
+    private var tamaño: Int? = null
     private var precio: Double? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,13 +42,13 @@ class DrinkAdd : AppCompatActivity() {
 
         nombre = nameAddDrink.text.toString()
         precio = priceAddDrink.text.toString().toDoubleOrNull()
-        tamaño = sizeAddDrink.text.toString().toDoubleOrNull()
+        tamaño = sizeAddDrink.text.toString().toIntOrNull()
 
 
         val table = hashMapOf(
             "Nombre" to nombre,
             "Precio" to precio!!.toDouble(),
-            "Tamaño" to tamaño!!.toDouble()
+            "Tamaño" to tamaño!!.toInt()
         )
 
         db?.collection("menu")?.document("alimentos")?.collection("bebida")?.add(table)?.addOnSuccessListener {

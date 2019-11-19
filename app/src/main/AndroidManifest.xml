@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Forms.ServiceFinish"></activity>
+        <activity android:name=".Forms.ServicePreAdd"></activity>
+        <activity android:name=".Forms.ServiceFinish" />
         <activity android:name=".Forms.ServiceEdit" />
         <activity android:name=".Forms.ServiceAdd" />
         <activity android:name=".Forms.DrinkAdd" />
