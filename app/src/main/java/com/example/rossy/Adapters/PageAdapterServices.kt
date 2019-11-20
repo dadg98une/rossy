@@ -6,8 +6,10 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.example.rossy.Fragments.PedidoServiceFragment
 import com.example.rossy.Fragments.TomarDrinkServiceFragment
 import com.example.rossy.Fragments.TomarFoodServiceFragment
+import com.example.rossy.Objetos.FragmentData
 
-class PageAdapterServices(fm: FragmentManager): FragmentPagerAdapter(fm) {
+class PageAdapterServices(fm: FragmentManager): FragmentPagerAdapter(fm), FragmentData {
+    override var idService: String = ""
 
     override fun getItem(position: Int): Fragment {
         return when (position){

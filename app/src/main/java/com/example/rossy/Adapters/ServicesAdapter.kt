@@ -26,7 +26,6 @@ class ServicesAdapter (val services: MutableList<Services>): RecyclerView.Adapte
         holder.view.mesaName.text = services.mesa
         holder.view.mesaArea.text = services.area
         holder.view.serverName.text = services.servidor
-        holder.view.folioName.text = services.folio.toString()
         holder.view.serviceID.text = services.id
     }
 
@@ -37,7 +36,6 @@ class ServicesAdapter (val services: MutableList<Services>): RecyclerView.Adapte
                 intent.putExtra("id", view.serviceID.text)
                 intent.putExtra("mesa", view.mesaName.text)
                 intent.putExtra("area", view.mesaArea.text)
-                intent.putExtra("folio", view.folioName.text)
                 intent.putExtra("servidor", view.serverName.text)
                 view.context.startActivity(intent)
             }
@@ -46,7 +44,6 @@ class ServicesAdapter (val services: MutableList<Services>): RecyclerView.Adapte
                 intent.putExtra("id", view.serviceID.text)
                 intent.putExtra("mesa", view.mesaName.text)
                 intent.putExtra("area", view.mesaArea.text)
-                intent.putExtra("folio", view.folioName.text)
                 intent.putExtra("servidor", view.serverName.text)
                 view.context.startActivity(intent)
             }

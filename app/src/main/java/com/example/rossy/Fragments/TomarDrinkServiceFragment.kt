@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rossy.Adapters.DrinksServiceAddAdapter
 import com.example.rossy.Objetos.Drinks
+import com.example.rossy.Objetos.FragmentData
 import com.example.rossy.R
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentChange
@@ -18,7 +19,10 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import kotlinx.android.synthetic.main.fragment_tomar_drink_services.*
 
-class TomarDrinkServiceFragment : Fragment(){
+class TomarDrinkServiceFragment : Fragment(), FragmentData{
+
+    override val idService: String
+        get() = ""
 
     private var db: FirebaseFirestore? = null
     private var docRef: CollectionReference? = null
@@ -77,7 +81,7 @@ class TomarDrinkServiceFragment : Fragment(){
                                 tamaño = 0
                             }
                             var id = docs.id
-                            drinks?.add(Drinks(id,name,precio,tamaño))
+                            drinks?.add(Drinks(id,name,precio,tamaño,idService))
                             recyclerTomarDrinkService.adapter?.notifyDataSetChanged()
                         }
                     }
@@ -96,7 +100,7 @@ class TomarDrinkServiceFragment : Fragment(){
                                 tamaño = 0
                             }
                             var id = docs.id
-                            drinks?.add(Drinks(id,name,precio,tamaño))
+                            drinks?.add(Drinks(id,name,precio,tamaño,idService))
                             recyclerTomarDrinkService.adapter?.notifyDataSetChanged()
                         }
                     }
@@ -113,7 +117,7 @@ class TomarDrinkServiceFragment : Fragment(){
                                 tamaño = 0
                             }
                             var id = docs.id
-                            drinks?.add(Drinks(id,name,precio,tamaño))
+                            drinks?.add(Drinks(id,name,precio,tamaño,idService))
                             recyclerTomarDrinkService.adapter?.notifyDataSetChanged()
                         }
 

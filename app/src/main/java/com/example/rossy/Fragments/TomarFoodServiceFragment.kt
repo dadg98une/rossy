@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rossy.Adapters.FoodsServiceAddAdapter
 import com.example.rossy.Objetos.Foods
+import com.example.rossy.Objetos.FragmentData
 import com.example.rossy.R
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
@@ -21,7 +22,9 @@ import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.fragment_tomar_food_services.*
 
-class TomarFoodServiceFragment : Fragment(){
+class TomarFoodServiceFragment : Fragment(), FragmentData{
+    override val idService: String
+        get() = TODO("not implemented") //To change initializer of created properties use File | Settings | File Templates.
 
     private var db: FirebaseFirestore? = null
     private var docRef: Query? = null

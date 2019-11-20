@@ -72,7 +72,7 @@ class MenuDrink : AppCompatActivity() {
                                 tamaño = 0
                             }
                             var id = docs.id
-                            drinks?.add(Drinks(id,name,precio,tamaño))
+                            drinks?.add(Drinks(id,name,precio,tamaño,""))
                             recyclerDrink.setOnClickListener {
                                 editDrink.setText(id)
                             }
@@ -97,7 +97,7 @@ class MenuDrink : AppCompatActivity() {
                                 tamaño = 0
                             }
                             var id = docs.id
-                            drinks?.add(Drinks(id,name,precio,tamaño))
+                            drinks?.add(Drinks(id,name,precio,tamaño,""))
                             recyclerDrink.setOnClickListener {
                                 editDrink.setText(id)
                             }
@@ -122,7 +122,7 @@ class MenuDrink : AppCompatActivity() {
                                 tamaño = 0
                             }
                             var id = docs.id
-                            drinks?.add(Drinks(id,name,precio,tamaño))
+                            drinks?.add(Drinks(id,name,precio,tamaño,""))
                             recyclerDrink.setOnClickListener {
                                 editDrink.setText(id)
                             }

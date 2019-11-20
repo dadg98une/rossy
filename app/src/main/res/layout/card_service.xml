@@ -71,14 +71,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/folioName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="00000"
-                app:layout_constraintBaseline_toBaselineOf="@+id/textView26"
-                app:layout_constraintStart_toEndOf="@+id/textView26" />
-
             <Button
                 android:id="@+id/entregarOrden"
                 android:layout_width="195dp"
@@ -108,9 +100,11 @@
                 android:id="@+id/serviceID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
                 android:text="serviceID"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView26"
+                app:layout_constraintStart_toEndOf="@+id/textView26"
                 tools:visibility="visible" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
